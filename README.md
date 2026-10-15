@@ -4,10 +4,9 @@ This ROS 1 project maintains a 20 × 20 probability grid and updates it from mot
 
 ## Contents
 
-- `src/lab6.py`: probability-grid update logic and ROS node.
-- `launch/lab6.launch`: starts the ROS node.
+- The Python node in `src/` implements the probability-grid updates.
+- The launch file in `launch/` starts the ROS node.
 - `package.xml` and `CMakeLists.txt`: catkin package metadata.
-- `Assignment-6.pdf`: original coursework handout.
 
 ## Requirements
 
@@ -21,7 +20,7 @@ Place this repository, with `package.xml` at its root, in a catkin workspace's `
 cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
-roslaunch lab6 lab6.launch
+roslaunch <package-name> <launch-file>
 ```
 
 The node subscribes to the `robot` topic (`std_msgs/String`). Commands are a direction letter followed by one digit: `R`, `L`, `U`, or `D` selects a motion prediction; `X` or `Y` selects an observation update. For example:
